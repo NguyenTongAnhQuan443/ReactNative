@@ -57,7 +57,13 @@
 // sum10To30()
 
 // Cau 8
-const convertTempCToF = tempCToFFunction = (doc) => {
-    return doc * (9/5) + 32;
+// const convertTempCToF = tempCToFFunction = (doC) => {
+//     return doC * (9/5) + 32;
+// }
+// console.log(convertTempCToF(23))
+
+// Cau 9
+const convertTempFToC = tempFToCFunction = (doF) => {
+    return (doF - 32) * (5 / 9);
 }
-console.log(convertTempCToF(23))
+console.log(convertTempFToC(23))
