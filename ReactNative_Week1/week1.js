@@ -129,22 +129,33 @@
 // console.log(findFibonacci(10))
 
 //  Cau 16
-const isPrime = isPrimeFunction = (number) =>{
-    if(number <=1){
-        return false;
+// const isPrime = isPrimeFunction = (number) =>{
+//     if(number <=1){
+//         return false;
+//     }
+//     if(number == 2){
+//         return true;
+//     }
+//     if(number % 2 === 0){
+//         return false;
+//     }
+//     for(let i = 3; i <= Math.sqrt(number); i+=2){
+//         if(number % i === 0){
+//             return false;
+//         }
+//     }
+//     return true
+// }
+// let checkPrime = 2;
+// console.log(isPrime(checkPrime) ? 'isPrime' : 'Not isPrime')
+
+// Cau 17
+const sumOfDigits = sumOfDigitsFunction = (number) => {
+    let sum = 0;
+    while(number > 0){
+        sum += number % 10;
+        number = Math.floor(number / 10); // bỏ chữ số cuối cùng
     }
-    if(number == 2){
-        return true;
-    }
-    if(number % 2 === 0){
-        return false;
-    }
-    for(let i = 3; i <= Math.sqrt(number); i+=2){
-        if(number % i === 0){
-            return false;
-        }
-    }
-    return true
+    return sum;
 }
-let checkPrime = 2;
-console.log(isPrime(checkPrime) ? 'isPrime' : 'Not isPrime')
+console.log(`SUM = ${sumOfDigits(23102016)}`)
