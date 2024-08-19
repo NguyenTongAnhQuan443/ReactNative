@@ -150,12 +150,44 @@
 // console.log(isPrime(checkPrime) ? 'isPrime' : 'Not isPrime')
 
 // Cau 17
-const sumOfDigits = sumOfDigitsFunction = (number) => {
-    let sum = 0;
-    while(number > 0){
-        sum += number % 10;
-        number = Math.floor(number / 10); // bỏ chữ số cuối cùng
+// const sumOfDigits = sumOfDigitsFunction = (number) => {
+//     let sum = 0;
+//     while(number > 0){
+//         sum += number % 10;
+//         number = Math.floor(number / 10); // bỏ chữ số cuối cùng
+//     }
+//     return sum;
+// }
+// console.log(`SUM = ${sumOfDigits(23102016)}`)
+
+// Cau 18
+const isPrime = isPrimeFunction = (number) =>{
+    if(number <=1){
+        return false;
     }
-    return sum;
+    if(number == 2){
+        return true;
+    }
+    if(number % 2 === 0){
+        return false;
+    }
+    for(let i = 3; i <= Math.sqrt(number); i+=2){
+        if(number % i === 0){
+            return false;
+        }
+    }
+    return true
 }
-console.log(`SUM = ${sumOfDigits(23102016)}`)
+const first100Prime = first100PrimeFunction = () =>{
+    let isPrimeArr = [];
+    let i = 2;
+    while(isPrimeArr.length < 100){
+        if(isPrime(i)){
+            isPrimeArr.push(i)
+        }
+        i++;
+    }
+    console.log(isPrimeArr)
+}
+first100Prime()
+console.log('isPrimeArr')
