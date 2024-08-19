@@ -223,11 +223,21 @@
 // console.log(primesGreaterThanN(5, 10))
 
 // Cau 20
-const rotateLeft = (arr) => {
+// const rotateLeft = (arr) => {
+//     if(arr.length === 0) return arr;
+//     const firstElement = arr.shift(); // Lấy và xóa phần tử đầu tiên
+//     arr.push(firstElement);
+//     return arr;
+// } 
+// const myArr = [2016, 10, 23];
+// console.log(rotateLeft(myArr))
+
+// Cau 21
+const rotateRight = (arr) => {
     if(arr.length === 0) return arr;
-    const firstElement = arr.shift(); // Lấy và xóa phần tử đầu tiên
-    arr.push(firstElement);
+    const firstElement = arr.pop(); // Lấy và xóa phần tử cuối cùng
+    arr.unshift(firstElement); // Thêm vào đầu mảng
     return arr;
 } 
 const myArr = [2016, 10, 23];
-console.log(rotateLeft(myArr))
+console.log(rotateRight(myArr))
