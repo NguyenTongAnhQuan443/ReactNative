@@ -107,11 +107,23 @@
 // console.log(finMaxArr(arr3))
 
 // Cau 14
-const first10Fibonacci = first10FibonacciFunction = () =>{
-    const fibonacci = [0, 1];
-    for(let i =2; i <= 10; i++){
-        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+// const first10Fibonacci = first10FibonacciFunction = () =>{
+//     const fibonacci = [0, 1];
+//     for(let i =2; i <= 10; i++){
+//         fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+//     }
+//     return fibonacci;
+// }
+// console.log(first10Fibonacci())
+
+// Cau 15
+const findFibonacci = (n) => {
+    if (n <= 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        return findFibonacci(n - 1) + findFibonacci(n - 2)
     }
-    return fibonacci;
 }
-console.log(first10Fibonacci())
+console.log(findFibonacci(10))
