@@ -161,33 +161,63 @@
 // console.log(`SUM = ${sumOfDigits(23102016)}`)
 
 // Cau 18
-const isPrime = isPrimeFunction = (number) =>{
-    if(number <=1){
+// const isPrime = isPrimeFunction = (number) =>{
+//     if(number <=1){
+//         return false;
+//     }
+//     if(number == 2){
+//         return true;
+//     }
+//     if(number % 2 === 0){
+//         return false;
+//     }
+//     for(let i = 3; i <= Math.sqrt(number); i+=2){
+//         if(number % i === 0){
+//             return false;
+//         }
+//     }
+//     return true
+// }
+// const first100Prime = first100PrimeFunction = () =>{
+//     let isPrimeArr = [];
+//     let i = 2;
+//     while(isPrimeArr.length < 100){
+//         if(isPrime(i)){
+//             isPrimeArr.push(i)
+//         }
+//         i++;
+//     }
+//     console.log(isPrimeArr)
+// }
+// first100Prime()
+
+// Cau 19
+const isPrime = isPrimeFunction = (number) => {
+    if (number <= 1) {
         return false;
     }
-    if(number == 2){
+    if (number == 2) {
         return true;
     }
-    if(number % 2 === 0){
+    if (number % 2 === 0) {
         return false;
     }
-    for(let i = 3; i <= Math.sqrt(number); i+=2){
-        if(number % i === 0){
+    for (let i = 3; i <= Math.sqrt(number); i += 2) {
+        if (number % i === 0) {
             return false;
         }
     }
     return true
 }
-const first100Prime = first100PrimeFunction = () =>{
-    let isPrimeArr = [];
-    let i = 2;
-    while(isPrimeArr.length < 100){
-        if(isPrime(i)){
-            isPrimeArr.push(i)
+const primesGreaterThanN = (p, n) => {
+    let primeArr = [];
+    let currrentNumber = n + 1;
+    while (primeArr.length < p) {
+        if (isPrime(currrentNumber)) {
+            primeArr.push(currrentNumber)
         }
-        i++;
+        currrentNumber++;
     }
-    console.log(isPrimeArr)
+    return primeArr;
 }
-first100Prime()
-console.log('isPrimeArr')
+console.log(primesGreaterThanN(5, 10))
