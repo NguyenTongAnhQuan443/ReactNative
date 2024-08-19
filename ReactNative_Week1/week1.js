@@ -233,11 +233,18 @@
 // console.log(rotateLeft(myArr))
 
 // Cau 21
-const rotateRight = (arr) => {
-    if(arr.length === 0) return arr;
-    const firstElement = arr.pop(); // Lấy và xóa phần tử cuối cùng
-    arr.unshift(firstElement); // Thêm vào đầu mảng
-    return arr;
-} 
+// const rotateRight = (arr) => {
+//     if(arr.length === 0) return arr;
+//     const firstElement = arr.pop(); // Lấy và xóa phần tử cuối cùng
+//     arr.unshift(firstElement); // Thêm vào đầu mảng
+//     return arr;
+// } 
+// const myArr = [2016, 10, 23];
+// console.log(rotateRight(myArr))
+
+// Cau 22
+const reverseArr = (arr) =>{
+    return arr.reverse();
+}
 const myArr = [2016, 10, 23];
-console.log(rotateRight(myArr))
+console.log(reverseArr(myArr))
