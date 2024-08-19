@@ -69,12 +69,23 @@
 // console.log(convertTempFToC(23))
 
 // Cau 10
-const sumARR = sumArray = (arr) =>{
+// const sumARR = sumArray = (arr) =>{
+//     let sum = 0;
+//     for(let i = 0; i < arr.length; i++){
+//         sum += arr[i]
+//     }
+//     console.log(sum)
+// }
+// const arr = [23, 10, 2016] 
+// sumARR(arr)
+
+// Cau 11
+const avgARR = avgArray = (arr) =>{
     let sum = 0;
     for(let i = 0; i < arr.length; i++){
         sum += arr[i]
     }
-    console.log(sum)
+    console.log(sum / arr.length)
 }
-const arr = [23, 10, 2016] 
-sumARR(arr)
+const arr1 = [23, 10, 2016] 
+avgARR(arr1)
