@@ -91,10 +91,17 @@
 // avgARR(arr1)
 
 // Cau 12
-const filterPositiveNum = filterPositiveNumFunction = (arr) => {
-    return arr.filter(number =>
-        number > 0
-    )
+// const filterPositiveNum = filterPositiveNumFunction = (arr) => {
+//     return arr.filter(number =>
+//         number > 0
+//     )
+// }
+// const arr2 = [-10, -4, -2018, 23, 10, 2016] 
+// console.log(filterPositiveNum(arr2))
+
+// Cau 13
+const finMaxArr = finMaxArray = (arr) => {
+    return Math.max(...arr)
 }
-const arr2 = [-10, -4, -2018, 23, 10, 2016] 
-console.log(filterPositiveNum(arr2))
+const arr3 = [-10, -4, -2018, 23, 10, 2016] 
+console.log(finMaxArr(arr3))
