@@ -43,15 +43,21 @@
 // factorial()
 
 // Cau 7
-const sum10To30 = sum10To30Function = () => {
-    let sum = 0;
-    for (let i = 0; i < 100; i++) {
-        if (i > 10 && i < 30) {
-            if (i % 2 == 0) {
-                sum += i;
-            }
-        }
-    }
-    console.log(sum)
+// const sum10To30 = sum10To30Function = () => {
+//     let sum = 0;
+//     for (let i = 0; i < 100; i++) {
+//         if (i > 10 && i < 30) {
+//             if (i % 2 == 0) {
+//                 sum += i;
+//             }
+//         }
+//     }
+//     console.log(sum)
+// }
+// sum10To30()
+
+// Cau 8
+const convertTempCToF = tempCToFFunction = (doc) => {
+    return doc * (9/5) + 32;
 }
-sum10To30()
+console.log(convertTempCToF(23))
