@@ -100,8 +100,18 @@
 // console.log(filterPositiveNum(arr2))
 
 // Cau 13
-const finMaxArr = finMaxArray = (arr) => {
-    return Math.max(...arr)
+// const finMaxArr = finMaxArray = (arr) => {
+//     return Math.max(...arr)
+// }
+// const arr3 = [-10, -4, -2018, 23, 10, 2016] 
+// console.log(finMaxArr(arr3))
+
+// Cau 14
+const first10Fibonacci = first10FibonacciFunction = () =>{
+    const fibonacci = [0, 1];
+    for(let i =2; i <= 10; i++){
+        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    }
+    return fibonacci;
 }
-const arr3 = [-10, -4, -2018, 23, 10, 2016] 
-console.log(finMaxArr(arr3))
+console.log(first10Fibonacci())
