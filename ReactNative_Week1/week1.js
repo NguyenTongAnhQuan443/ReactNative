@@ -243,8 +243,15 @@
 // console.log(rotateRight(myArr))
 
 // Cau 22
-const reverseArr = (arr) =>{
-    return arr.reverse();
+// const reverseArr = (arr) =>{
+//     return arr.reverse();
+// }
+// const myArr = [2016, 10, 23];
+// console.log(reverseArr(myArr))
+
+// Cau 23 
+const reverseString = (str) =>{
+    return str.split('').reverse().join('');
 }
-const myArr = [2016, 10, 23];
-console.log(reverseArr(myArr))
+const myStr = 'NguyenQuan'
+console.log(reverseString(myStr))
