@@ -23,11 +23,21 @@
 // }
 
 // Cau 5
-const sum = sum1To10 = () => {
-    let sum = 0;
+// const sum = sum1To10 = () => {
+//     let sum = 0;
+//     for (let i = 1; i < 11; i++) {
+//         sum += i;
+//     }
+//     console.log("🚀 ~ sum:", sum)
+// }
+// sum()
+
+// Cau 6
+const factorial = factorialFunction = () => {
+    let result = 1;
     for (let i = 1; i < 11; i++) {
-        sum += i;
+        result *= i;
     }
-    console.log("🚀 ~ sum:", sum)
+    console.log(`${result}`)
 }
-sum()
+factorial()
