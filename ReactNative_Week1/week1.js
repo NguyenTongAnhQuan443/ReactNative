@@ -117,13 +117,34 @@
 // console.log(first10Fibonacci())
 
 // Cau 15
-const findFibonacci = (n) => {
-    if (n <= 0) {
-        return 0;
-    } else if (n == 1) {
-        return 1;
-    } else {
-        return findFibonacci(n - 1) + findFibonacci(n - 2)
+// const findFibonacci = (n) => {
+//     if (n <= 0) {
+//         return 0;
+//     } else if (n == 1) {
+//         return 1;
+//     } else {
+//         return findFibonacci(n - 1) + findFibonacci(n - 2)
+//     }
+// }
+// console.log(findFibonacci(10))
+
+//  Cau 16
+const isPrime = isPrimeFunction = (number) =>{
+    if(number <=1){
+        return false;
     }
+    if(number == 2){
+        return true;
+    }
+    if(number % 2 === 0){
+        return false;
+    }
+    for(let i = 3; i <= Math.sqrt(number); i+=2){
+        if(number % i === 0){
+            return false;
+        }
+    }
+    return true
 }
-console.log(findFibonacci(10))
+let checkPrime = 2;
+console.log(isPrime(checkPrime) ? 'isPrime' : 'Not isPrime')
