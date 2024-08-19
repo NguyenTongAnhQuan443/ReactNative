@@ -80,12 +80,21 @@
 // sumARR(arr)
 
 // Cau 11
-const avgARR = avgArray = (arr) =>{
-    let sum = 0;
-    for(let i = 0; i < arr.length; i++){
-        sum += arr[i]
-    }
-    console.log(sum / arr.length)
+// const avgARR = avgArray = (arr) =>{
+//     let sum = 0;
+//     for(let i = 0; i < arr.length; i++){
+//         sum += arr[i]
+//     }
+//     console.log(sum / arr.length)
+// }
+// const arr1 = [23, 10, 2016] 
+// avgARR(arr1)
+
+// Cau 12
+const filterPositiveNum = filterPositiveNumFunction = (arr) => {
+    return arr.filter(number =>
+        number > 0
+    )
 }
-const arr1 = [23, 10, 2016] 
-avgARR(arr1)
+const arr2 = [-10, -4, -2018, 23, 10, 2016] 
+console.log(filterPositiveNum(arr2))
