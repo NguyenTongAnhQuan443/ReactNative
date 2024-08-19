@@ -63,7 +63,18 @@
 // console.log(convertTempCToF(23))
 
 // Cau 9
-const convertTempFToC = tempFToCFunction = (doF) => {
-    return (doF - 32) * (5 / 9);
+// const convertTempFToC = tempFToCFunction = (doF) => {
+//     return (doF - 32) * (5 / 9);
+// }
+// console.log(convertTempFToC(23))
+
+// Cau 10
+const sumARR = sumArray = (arr) =>{
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+        sum += arr[i]
+    }
+    console.log(sum)
 }
-console.log(convertTempFToC(23))
+const arr = [23, 10, 2016] 
+sumARR(arr)
