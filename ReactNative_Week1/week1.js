@@ -33,11 +33,25 @@
 // sum()
 
 // Cau 6
-const factorial = factorialFunction = () => {
-    let result = 1;
-    for (let i = 1; i < 11; i++) {
-        result *= i;
+// const factorial = factorialFunction = () => {
+//     let result = 1;
+//     for (let i = 1; i < 11; i++) {
+//         result *= i;
+//     }
+//     console.log(`${result}`)
+// }
+// factorial()
+
+// Cau 7
+const sum10To30 = sum10To30Function = () => {
+    let sum = 0;
+    for (let i = 0; i < 100; i++) {
+        if (i > 10 && i < 30) {
+            if (i % 2 == 0) {
+                sum += i;
+            }
+        }
     }
-    console.log(`${result}`)
+    console.log(sum)
 }
-factorial()
+sum10To30()
