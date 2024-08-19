@@ -250,8 +250,16 @@
 // console.log(reverseArr(myArr))
 
 // Cau 23 
-const reverseString = (str) =>{
-    return str.split('').reverse().join('');
+// const reverseString = (str) =>{
+//     return str.split('').reverse().join('');
+// }
+// const myStr = 'NguyenQuan'
+// console.log(reverseString(myStr))
+
+// Cau 24
+const mergeArr = (arr1, arr2) =>{
+    return arr1.concat(arr2);
 }
-const myStr = 'NguyenQuan'
-console.log(reverseString(myStr))
+const myArr1 = [2016, 10, 23];
+const myArr2 = [2018, 4, 10];
+console.log(mergeArr(myArr1, myArr2))
