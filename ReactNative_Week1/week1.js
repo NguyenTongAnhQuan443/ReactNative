@@ -265,11 +265,20 @@
 // console.log(mergeArr(myArr1, myArr2))
 
 // Cau 25 hợp trừ giao của hai mảng
-const symmetricDifference = (arr1, arr2) => {
-    const onlyInArr1 = arr1.filter(item => !arr2.includes(item));
-    const onlyInArr2 = arr2.filter(item => !arr1.includes(item));
-    return [...onlyInArr1, ...onlyInArr2];
+// const symmetricDifference = (arr1, arr2) => {
+//     const onlyInArr1 = arr1.filter(item => !arr2.includes(item));
+//     const onlyInArr2 = arr2.filter(item => !arr1.includes(item));
+//     return [...onlyInArr1, ...onlyInArr2];
+// }
+// const arr1 = [2,0,1,6]
+// const arr2 = [2,0,1,8]
+// console.log(symmetricDifference(arr1, arr2))
+
+// Cau 26
+const arrayDifference = (arr1, arr2) =>{
+    return arr1.filter(item => !arr2.includes(item));
 }
 const arr1 = [2,0,1,6]
 const arr2 = [2,0,1,8]
-console.log(symmetricDifference(arr1, arr2))
+console.log(arrayDifference(arr1, arr2))
+
