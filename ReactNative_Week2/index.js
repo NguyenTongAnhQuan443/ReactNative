@@ -230,20 +230,52 @@
 // checkWinner(avgDataDolphinsScore2, avgDataKoalasScore2);
 
 // Coding Challenge #2
-let bills = [125, 555, 44];
-let tips = [];
-let totals = [];
+// let bills = [125, 555, 44];
+// let tips = [];
+// let totals = [];
 
-calcTip = (value) => {
-    return (value > 15 && value <= 300) ? 15 : (value > 300 ? 20 : 0)
+// calcTip = (value) => {
+//     return (value > 15 && value <= 300) ? 15 : (value > 300 ? 20 : 0)
+// }
+
+// for (bill of bills) {
+//     tips.push(calcTip(bill))
+//     totals.push(bill + calcTip(bill))
+// }
+
+// for (let i = 0; i < bills.length; i++) {
+//     console.log(`bill: ${bills[i]} - tip: ${tips[i]} - total: ${totals[i]}`)
+// }
+
+
+// Coding Challenge #3
+const markMiler = {
+    fullName: "Mark Miler",
+    mass: 78,
+    height: 1.69,
+    calcBMI: function() {
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi;
+    }
+};
+
+const johnSmith = {
+    fullName: "John Smith",
+    mass: 92,
+    height: 1.95,
+    calcBMI: function() {
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi;
+    }
+};
+
+markMiler.calcBMI();
+johnSmith.calcBMI();
+
+if (markMiler.bmi > johnSmith.bmi) {
+    console.log(`${markMiler.fullName}'s BMI (${markMiler.bmi.toFixed(1)}) is higher than ${johnSmith.fullName}'s (${johnSmith.bmi.toFixed(1)})!`);
+} else if (johnSmith.bmi > markMiller.bmi) {
+    console.log(`${johnSmith.fullName}'s BMI (${johnSmith.bmi.toFixed(1)}) is higher than ${markMiler.fullName}'s (${markMiler.bmi.toFixed(1)})!`);
+} else {
+    console.log(`${markMiler.fullName} and ${johnSmith.fullName} have the same BMI (${markMiler.bmi.toFixed(1)})!`);
 }
-
-for (bill of bills) {
-    tips.push(calcTip(bill))
-    totals.push(bill + calcTip(bill))
-}
-
-for (let i = 0; i < bills.length; i++) {
-    console.log(`bill: ${bills[i]} - tip: ${tips[i]} - total: ${totals[i]}`)
-}
-
