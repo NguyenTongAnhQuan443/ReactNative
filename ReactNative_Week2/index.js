@@ -95,95 +95,103 @@
 
 // Coding Challenge #3
 // Data 1
-let dataDolphinsScore1 = [96, 108, 89];
-let dataKoalasScore1 = [88, 91, 110];
+// let dataDolphinsScore1 = [96, 108, 89];
+// let dataKoalasScore1 = [88, 91, 110];
 
-let dataDolphinsScore2 = [97, 112, 101];
-let dataKoalasScore2 = [109, 95, 123];
+// let dataDolphinsScore2 = [97, 112, 101];
+// let dataKoalasScore2 = [109, 95, 123];
 
-let dataDolphinsScore3 = [97, 112, 101];
-let dataKoalasScore3 = [109, 95, 106];
+// let dataDolphinsScore3 = [97, 112, 101];
+// let dataKoalasScore3 = [109, 95, 106];
 
-const avgDataDolphinsScore1 = dataDolphinsScore1.reduce((total, num) => total + num, 0) / dataDolphinsScore1.length;
-const avgDataKoalasScore1 = dataKoalasScore1.reduce((total, num) => total + num, 0) / dataKoalasScore1.length;
+// const avgDataDolphinsScore1 = dataDolphinsScore1.reduce((total, num) => total + num, 0) / dataDolphinsScore1.length;
+// const avgDataKoalasScore1 = dataKoalasScore1.reduce((total, num) => total + num, 0) / dataKoalasScore1.length;
 
-const avgDataDolphinsScore2 = dataDolphinsScore2.reduce((total, num) => total + num, 0) / dataDolphinsScore2.length;
-const avgDataKoalasScore2 = dataKoalasScore2.reduce((total, num) => total + num, 0) / dataKoalasScore2.length;
+// const avgDataDolphinsScore2 = dataDolphinsScore2.reduce((total, num) => total + num, 0) / dataDolphinsScore2.length;
+// const avgDataKoalasScore2 = dataKoalasScore2.reduce((total, num) => total + num, 0) / dataKoalasScore2.length;
 
-const avgDataDolphinsScore3 = dataDolphinsScore3.reduce((total, num) => total + num, 0) / dataDolphinsScore3.length;
-const avgDataKoalasScore3 = dataKoalasScore3.reduce((total, num) => total + num, 0) / dataKoalasScore3.length;
+// const avgDataDolphinsScore3 = dataDolphinsScore3.reduce((total, num) => total + num, 0) / dataDolphinsScore3.length;
+// const avgDataKoalasScore3 = dataKoalasScore3.reduce((total, num) => total + num, 0) / dataKoalasScore3.length;
 
-if (avgDataDolphinsScore1.toFixed(2) > avgDataKoalasScore1.toFixed(2)) {
-    if (checkWin(dataDolphinsScore1)) {
-        console.log(`DolphinsScore1: ${avgDataDolphinsScore1.toFixed(2)} - avgDataKoalasScore1: ${avgDataKoalasScore1.toFixed(2)} => Dolphins WIN`)
-    } else {
-        console.log(`Not qualified to win`)
-    }
+// if (avgDataDolphinsScore1.toFixed(2) > avgDataKoalasScore1.toFixed(2)) {
+//     if (checkWin(dataDolphinsScore1)) {
+//         console.log(`DolphinsScore1: ${avgDataDolphinsScore1.toFixed(2)} - avgDataKoalasScore1: ${avgDataKoalasScore1.toFixed(2)} => Dolphins WIN`)
+//     } else {
+//         console.log(`Not qualified to win`)
+//     }
 
-} else if (avgDataDolphinsScore1.toFixed(2) < avgDataKoalasScore1.toFixed(2)) {
-    if (checkWin(dataKoalasScore1)) {
-        console.log(`DolphinsScore1: ${avgDataDolphinsScore1.toFixed(2)} - avgDataKoalasScore1: ${avgDataKoalasScore1.toFixed(2)} => Koalas WIN`)
-    } else {
-        console.log(`Not qualified to win`)
-    }
+// } else if (avgDataDolphinsScore1.toFixed(2) < avgDataKoalasScore1.toFixed(2)) {
+//     if (checkWin(dataKoalasScore1)) {
+//         console.log(`DolphinsScore1: ${avgDataDolphinsScore1.toFixed(2)} - avgDataKoalasScore1: ${avgDataKoalasScore1.toFixed(2)} => Koalas WIN`)
+//     } else {
+//         console.log(`Not qualified to win`)
+//     }
 
-} else {
-    if (checkWin(dataKoalasScore1) && checkWin(dataKoalasScore1)) {
-        console.log(`DolphinsScore1: ${avgDataDolphinsScore1.toFixed(2)} - avgDataKoalasScore1: ${avgDataKoalasScore1.toFixed(2)} => DROW !!`)
-    } else {
-        console.log(`Not qualified to win`)
-    }
+// } else {
+//     if (checkWin(dataKoalasScore1) && checkWin(dataKoalasScore1)) {
+//         console.log(`DolphinsScore1: ${avgDataDolphinsScore1.toFixed(2)} - avgDataKoalasScore1: ${avgDataKoalasScore1.toFixed(2)} => DROW !!`)
+//     } else {
+//         console.log(`Not qualified to win`)
+//     }
+// }
+
+// if (avgDataDolphinsScore2.toFixed(2) > avgDataKoalasScore2.toFixed(2)) {
+//     if (checkWin(dataDolphinsScore2)) {
+//         console.log(`DolphinsScore2: ${avgDataDolphinsScore2.toFixed(2)} - avgDataKoalasScore2: ${avgDataKoalasScore2.toFixed(2)} => Dolphins WIN`)
+//     } else {
+//         console.log(`Not qualified to win`)
+//     }
+
+// } else if (avgDataDolphinsScore2.toFixed(2) < avgDataKoalasScore2.toFixed(2)) {
+//     if (checkWin(dataKoalasScore2)) {
+//         console.log(`DolphinsScore2: ${avgDataDolphinsScore2.toFixed(2)} - avgDataKoalasScore2: ${avgDataKoalasScore2.toFixed(2)} => Koalas WIN`)
+//     } else {
+//         console.log(`Not qualified to win`)
+//     }
+
+// } else {
+//     if (checkWin(dataDolphinsScore2) && checkWin(dataKoalasScore2)) {
+//         console.log(`DolphinsScore2: ${avgDataDolphinsScore2.toFixed(2)} - avgDataKoalasScore2: ${avgDataKoalasScore2.toFixed(2)} => DROW !!`)
+//     } else {
+//         console.log(`Not qualified to win`)
+//     }
+// }
+
+// if (avgDataDolphinsScore3.toFixed(2) > avgDataKoalasScore3.toFixed(2)) {
+//     if (checkWin(dataDolphinsScore3)) {
+//         console.log(`DolphinsScore3: ${avgDataDolphinsScore3.toFixed(2)} - avgDataKoalasScore3: ${avgDataKoalasScore3.toFixed(2)} => Dolphins WIN`)
+//     } else {
+//         console.log(`Not qualified to win`)
+//     }
+// } else if (avgDataDolphinsScore3.toFixed(2) < avgDataKoalasScore3.toFixed(2)) {
+//     if (checkWin(dataKoalasScore3)) {
+//         console.log(`DolphinsScore3: ${avgDataDolphinsScore3.toFixed(2)} - avgDataKoalasScore3: ${avgDataKoalasScore3.toFixed(2)} => Koalas WIN`)
+//     } else {
+//         console.log(`Not qualified to win`)
+//     }
+
+// } else {
+//     if (checkWin(dataDolphinsScore3) && checkWin(dataDolphinsScore3)) {
+//         console.log(`DolphinsScore3: ${avgDataDolphinsScore3.toFixed(2)} - avgDataKoalasScore3: ${avgDataKoalasScore3.toFixed(2)} => DROW !!`)
+//     } else {
+//         console.log(`Not qualified to win`)
+//     }
+
+// }
+
+// function checkWin(scoreArr) {
+//     for (let value of scoreArr) {
+//         if (value > 100) {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+
+
+// Coding Challenge #4
+const bill275 = 316.25;
+const tip = checkTip = (value) => {
+    return (value > 15 && value <= 300) ? 15 : (value > 300 ? 20 : 0)
 }
-
-if (avgDataDolphinsScore2.toFixed(2) > avgDataKoalasScore2.toFixed(2)) {
-    if (checkWin(dataDolphinsScore2)) {
-        console.log(`DolphinsScore2: ${avgDataDolphinsScore2.toFixed(2)} - avgDataKoalasScore2: ${avgDataKoalasScore2.toFixed(2)} => Dolphins WIN`)
-    } else {
-        console.log(`Not qualified to win`)
-    }
-
-} else if (avgDataDolphinsScore2.toFixed(2) < avgDataKoalasScore2.toFixed(2)) {
-    if (checkWin(dataKoalasScore2)) {
-        console.log(`DolphinsScore2: ${avgDataDolphinsScore2.toFixed(2)} - avgDataKoalasScore2: ${avgDataKoalasScore2.toFixed(2)} => Koalas WIN`)
-    } else {
-        console.log(`Not qualified to win`)
-    }
-
-} else {
-    if (checkWin(dataDolphinsScore2) && checkWin(dataKoalasScore2)) {
-        console.log(`DolphinsScore2: ${avgDataDolphinsScore2.toFixed(2)} - avgDataKoalasScore2: ${avgDataKoalasScore2.toFixed(2)} => DROW !!`)
-    } else {
-        console.log(`Not qualified to win`)
-    }
-}
-
-if (avgDataDolphinsScore3.toFixed(2) > avgDataKoalasScore3.toFixed(2)) {
-    if (checkWin(dataDolphinsScore3)) {
-        console.log(`DolphinsScore3: ${avgDataDolphinsScore3.toFixed(2)} - avgDataKoalasScore3: ${avgDataKoalasScore3.toFixed(2)} => Dolphins WIN`)
-    } else {
-        console.log(`Not qualified to win`)
-    }
-} else if (avgDataDolphinsScore3.toFixed(2) < avgDataKoalasScore3.toFixed(2)) {
-    if (checkWin(dataKoalasScore3)) {
-        console.log(`DolphinsScore3: ${avgDataDolphinsScore3.toFixed(2)} - avgDataKoalasScore3: ${avgDataKoalasScore3.toFixed(2)} => Koalas WIN`)
-    } else {
-        console.log(`Not qualified to win`)
-    }
-
-} else {
-    if (checkWin(dataDolphinsScore3) && checkWin(dataDolphinsScore3)) {
-        console.log(`DolphinsScore3: ${avgDataDolphinsScore3.toFixed(2)} - avgDataKoalasScore3: ${avgDataKoalasScore3.toFixed(2)} => DROW !!`)
-    } else {
-        console.log(`Not qualified to win`)
-    }
-
-}
-
-function checkWin(scoreArr) {
-    for (let value of scoreArr) {
-        if (value > 100) {
-            return true;
-        }
-    }
-    return false;
-}
+console.log(`The bill was 275, the tip was ${tip(bill275)}, and the total value ${bill275}`)
