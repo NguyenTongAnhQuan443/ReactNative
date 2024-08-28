@@ -190,8 +190,42 @@
 
 
 // Coding Challenge #4
-const bill275 = 316.25;
-const tip = checkTip = (value) => {
-    return (value > 15 && value <= 300) ? 15 : (value > 300 ? 20 : 0)
+// const bill275 = 316.25;
+// const tip = checkTip = (value) => {
+//     return (value > 15 && value <= 300) ? 15 : (value > 300 ? 20 : 0)
+// }
+// console.log(`The bill was 275, the tip was ${tip(bill275)}, and the total value ${bill275}`)
+
+
+// Part 2
+// Coding Challenge #1
+// Data 1
+let dolphinsScore1 = [44, 23, 71];
+let koalasScore1 = [65, 54, 49];
+
+let dolphinsScore2 = [85, 54, 41];
+let koalasScore2 = [23, 34, 27];
+
+calcAverage = (arr) => {
+    return arr.reduce((total, num) => total + num, 0) / arr.length
 }
-console.log(`The bill was 275, the tip was ${tip(bill275)}, and the total value ${bill275}`)
+
+let avgDataDolphinsScore1 = calcAverage(dolphinsScore1);
+let avgDataDolphinsScore2 = calcAverage(dolphinsScore2);
+
+let avgDataKoalasScore1 = calcAverage(koalasScore1);
+let avgDataKoalasScore2 = calcAverage(koalasScore2);
+
+checkWinner = (avgDolhins, avgKoalas) => {
+    if (avgDolhins >= avgKoalas * 2) {
+        console.log(`Dolhins: ${avgDolhins}- Koalas: ${avgKoalas} => Dolhins WIN`)
+    } else if (avgDolhins <= avgKoalas * 2) {
+        console.log(`Dolhins: ${avgDolhins}- Koalas: ${avgKoalas} => Koalas WIN`)
+    } else {
+        console.log(`NO WINNER`)
+    }
+
+}
+
+checkWinner(avgDataDolphinsScore1, avgDataKoalasScore1);
+checkWinner(avgDataDolphinsScore2, avgDataKoalasScore2);
