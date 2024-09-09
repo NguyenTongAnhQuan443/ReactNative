@@ -249,33 +249,35 @@
 
 
 // Coding Challenge #3
-const markMiler = {
-    fullName: "Mark Miler",
-    mass: 78,
-    height: 1.69,
-    calcBMI: function() {
-        this.bmi = this.mass / (this.height ** 2);
-        return this.bmi;
-    }
-};
+// const markMiler = {
+//     fullName: "Mark Miler",
+//     mass: 78,
+//     height: 1.69,
+//     calcBMI: function() {
+//         this.bmi = this.mass / (this.height ** 2);
+//         return this.bmi;
+//     }
+// };
 
-const johnSmith = {
-    fullName: "John Smith",
-    mass: 92,
-    height: 1.95,
-    calcBMI: function() {
-        this.bmi = this.mass / (this.height ** 2);
-        return this.bmi;
-    }
-};
+// const johnSmith = {
+//     fullName: "John Smith",
+//     mass: 92,
+//     height: 1.95,
+//     calcBMI: function() {
+//         this.bmi = this.mass / (this.height ** 2);
+//         return this.bmi;
+//     }
+// };
 
-markMiler.calcBMI();
-johnSmith.calcBMI();
+// markMiler.calcBMI();
+// johnSmith.calcBMI();
 
-if (markMiler.bmi > johnSmith.bmi) {
-    console.log(`${markMiler.fullName}'s BMI (${markMiler.bmi.toFixed(1)}) is higher than ${johnSmith.fullName}'s (${johnSmith.bmi.toFixed(1)})!`);
-} else if (johnSmith.bmi > markMiller.bmi) {
-    console.log(`${johnSmith.fullName}'s BMI (${johnSmith.bmi.toFixed(1)}) is higher than ${markMiler.fullName}'s (${markMiler.bmi.toFixed(1)})!`);
-} else {
-    console.log(`${markMiler.fullName} and ${johnSmith.fullName} have the same BMI (${markMiler.bmi.toFixed(1)})!`);
-}
+// if (markMiler.bmi > johnSmith.bmi) {
+//     console.log(`${markMiler.fullName}'s BMI (${markMiler.bmi.toFixed(1)}) is higher than ${johnSmith.fullName}'s (${johnSmith.bmi.toFixed(1)})!`);
+// } else if (johnSmith.bmi > markMiller.bmi) {
+//     console.log(`${johnSmith.fullName}'s BMI (${johnSmith.bmi.toFixed(1)}) is higher than ${markMiler.fullName}'s (${markMiler.bmi.toFixed(1)})!`);
+// } else {
+//     console.log(`${markMiler.fullName} and ${johnSmith.fullName} have the same BMI (${markMiler.bmi.toFixed(1)})!`);
+// }
+
+// Coding Challenge #4
