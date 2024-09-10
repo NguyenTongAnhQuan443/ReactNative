@@ -1,9 +1,10 @@
-import { TouchableOpacity, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { LinearGradient } from 'expo-linear-gradient' // Import từ Expo
 
-const FirstScreen = ({navigation}) => {
+const SecondScreen = ({navigation}) => {
     return (
-        <View style={styles.container}>
+        <LinearGradient style={{ flex: 1 }} colors={['#add8e6', '#00bfff']}>
 
             {/* View 1 - Hình tròn */}
             <View style={styles.view_1}>
@@ -23,42 +24,46 @@ const FirstScreen = ({navigation}) => {
             </View>
 
             {/* View 4 - Touchable... */}
-            <View style={styles.view_4}>
-                <TouchableOpacity style={styles.view_4_Touchable}>
-                    <Text style={styles.view_4_Button}>LOGIN</Text>
-                </TouchableOpacity>
+            <View style={{ flex: 1 }}>
+                <View style={styles.view_4}>
+                    <TouchableOpacity style={styles.view_4_Touchable} >
+                        <Text style={styles.view_4_Button}>LOGIN</Text>
+                    </TouchableOpacity>
 
-                <TouchableOpacity style={styles.view_4_Touchable}>
-                    <Text style={styles.view_4_Button}>SIG UP</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.view_4_Touchable}>
+                        <Text style={styles.view_4_Button}>SIGN UP</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.view_4_ContainerText}>
+                    <Text style={styles.view_4_Text}>HOW WE WORK?</Text>
+                </View>
             </View>
 
             {/* Navigator */}
             <View style={styles.view_5}>
                 <View style={styles.view_4_Touchable}>
-                    <TouchableOpacity disabled={true}>
+                    <TouchableOpacity onPress={() => {navigation.goBack()}}>
                         <Text style={styles.view_4_Button}>SC Trước</Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.view_4_Touchable}>
-                    <TouchableOpacity onPress={() => navigation.navigate('SecondScreen')}>
+                    <TouchableOpacity>
                         <Text style={styles.view_4_Button}>SC Sau</Text>
                     </TouchableOpacity>
                 </View>
             </View>
 
-        </View>
+
+        </LinearGradient>
     )
 }
 
-export default FirstScreen
+export default SecondScreen
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#00CCF9'
-    },
+
     // View 1
     view_1: {
         flex: 2,
@@ -116,6 +121,16 @@ const styles = StyleSheet.create({
     view_4_Button: {
         fontSize: 20,
         fontWeight: 'bold'
+    },
+    view_4_ContainerText: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+    },
+    view_4_Text: {
+        fontWeight: 'bold',
+        fontSize: 18
     },
 
     // View 5

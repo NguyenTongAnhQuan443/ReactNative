@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import FirstScreen from './components/FirstScreen'
+import SecondScreen from './components/SecondScreen'
 
 const Stack = createStackNavigator();
 
@@ -12,6 +13,7 @@ const App = () => {
    <NavigationContainer>
       <Stack.Navigator initialRouteName='FirstScreen'>
         <Stack.Screen name='FirstScreen' component={FirstScreen} options={{headerShown:false}}/>
+        <Stack.Screen name='SecondScreen' component={SecondScreen} options={{headerShown:false}}/>
       </Stack.Navigator>
    </NavigationContainer>
   )
