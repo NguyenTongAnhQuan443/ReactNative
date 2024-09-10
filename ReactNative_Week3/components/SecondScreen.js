@@ -43,13 +43,13 @@ const SecondScreen = ({navigation}) => {
             {/* Navigator */}
             <View style={styles.view_5}>
                 <View style={styles.view_4_Touchable}>
-                    <TouchableOpacity onPress={() => {navigation.goBack()}}>
+                    <TouchableOpacity style={{width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center'}} onPress={() => {navigation.goBack()}}>
                         <Text style={styles.view_4_Button}>SC Trước</Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.view_4_Touchable}>
-                    <TouchableOpacity onPress={() => navigation.navigate('ThirdScreen')}>
+                    <TouchableOpacity style={{width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center'}} onPress={() => navigation.navigate('ThirdScreen')}>
                         <Text style={styles.view_4_Button}>SC Sau</Text>
                     </TouchableOpacity>
                 </View>

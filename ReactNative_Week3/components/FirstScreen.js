@@ -36,13 +36,13 @@ const FirstScreen = ({navigation}) => {
             {/* Navigator */}
             <View style={styles.view_5}>
                 <View style={styles.view_4_Touchable}>
-                    <TouchableOpacity disabled={true}>
+                    <TouchableOpacity style={{width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center'}} disabled={true}>
                         <Text style={styles.view_4_Button}>SC Trước</Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.view_4_Touchable}>
-                    <TouchableOpacity onPress={() => navigation.navigate('SecondScreen')}>
+                    <TouchableOpacity style={{width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center'}} onPress={() => navigation.navigate('SecondScreen')}>
                         <Text style={styles.view_4_Button}>SC Sau</Text>
                     </TouchableOpacity>
                 </View>
