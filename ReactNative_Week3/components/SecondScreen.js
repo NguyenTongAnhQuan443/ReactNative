@@ -49,7 +49,7 @@ const SecondScreen = ({navigation}) => {
                 </View>
 
                 <View style={styles.view_4_Touchable}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('ThirdScreen')}>
                         <Text style={styles.view_4_Button}>SC Sau</Text>
                     </TouchableOpacity>
                 </View>
