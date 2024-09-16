@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Button, TextInput, Image } from 'react-native'
 import { React, useState } from 'react'
 
-const Screen_4 = () => {
+const Screen_Tiki = () => {
   const [number, setNumber] = useState(1);
   return (
     <View style={styles.container}>
@@ -125,7 +125,7 @@ const Screen_4 = () => {
   )
 }
 
-export default Screen_4
+export default Screen_Tiki
 
 const styles = StyleSheet.create({
   container: {
