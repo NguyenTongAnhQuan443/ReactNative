@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Điện Thoại Vsmart Joy 3 Hàng chính hãng - Màu Silver",
+        "color": "Silver",
+        "supplier": "Tiki Tradding",
+        "price": "1.790.000 đ"
+    },
+    {
+        "id": 2,
+        "name": "Điện Thoại Vsmart Joy 3 Hàng chính hãng - Màu Red",
+        "color": "Red",
+        "supplier": "Tiki Tradding",
+        "price": "1.790.000 đ"
+    },
+    {
+        "id": 3,
+        "name": "Điện Thoại Vsmart Joy 3 Hàng chính hãng - Màu Black",
+        "color": "Black",
+        "supplier": "Tiki Tradding",
+        "price": "1.790.000 đ"
+    },
+    {
+        "id": 4,
+        "name": "Điện Thoại Vsmart Joy 3 Hàng chính hãng - Màu Blue",
+        "color": "Blue",
+        "supplier": "Tiki Tradding",
+        "price": "1.790.000 đ"
+    }
+]
