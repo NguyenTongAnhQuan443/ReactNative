@@ -4,6 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 import Screen_01 from './Screen_01'
 
+import phone from '../data/phone.json'
+
 const Screen_02 = ({ navigation }) => {
     
     const [color, setColor] = useState(1);
@@ -68,28 +70,36 @@ const Screen_02 = ({ navigation }) => {
 
                 {/* Màu 1 */}
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                    <TouchableOpacity style={[{width: '20%', height: '80%', backgroundColor: '#C5F1FB', justifyContent: 'center', alignItems: 'center'}, selected === 1 ? { borderColor: 'yellow', borderWidth: 2 } : { borderWidth: 0 }]}>
+                    <TouchableOpacity style={[{width: '20%', height: '80%', backgroundColor: '#C5F1FB', justifyContent: 'center', alignItems: 'center'}, selected === 1 ? { borderColor: 'yellow', borderWidth: 3 } : { borderWidth: 0 }]} onPress={
+                        () => setSelected(1)
+                    }>
 
                     </TouchableOpacity>
                 </View>
 
                 {/* Màu 2 */}
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                    <TouchableOpacity style={[{width: '20%', height: '80%', backgroundColor: '#C5F1FB', justifyContent: 'center', alignItems: 'center'}, selected === 2 ? { borderColor: 'yellow', borderWidth: 2 } : { borderWidth: 0 }]}>
+                    <TouchableOpacity style={[{width: '20%', height: '80%', backgroundColor: '#F30D0D', justifyContent: 'center', alignItems: 'center'}, selected === 2 ? { borderColor: 'yellow', borderWidth: 3 } : { borderWidth: 0 }]} onPress={
+                        () => setSelected(2)
+                    }>
 
                     </TouchableOpacity>
                 </View>
 
                 {/* Màu 3 */}
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                    <TouchableOpacity style={[{width: '20%', height: '80%', backgroundColor: '#C5F1FB', justifyContent: 'center', alignItems: 'center'}, selected === 3 ? { borderColor: 'yellow', borderWidth: 2 } : { borderWidth: 0 }]}>
+                    <TouchableOpacity style={[{width: '20%', height: '80%', backgroundColor: '#000000', justifyContent: 'center', alignItems: 'center'}, selected === 3 ? { borderColor: 'yellow', borderWidth: 3 } : { borderWidth: 0 }]} onPress={
+                        () => setSelected(3)
+                    }>
 
                     </TouchableOpacity>
                 </View>
 
                 {/* Màu 4 */}
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                    <TouchableOpacity style={[{width: '20%', height: '80%', backgroundColor: '#C5F1FB', justifyContent: 'center', alignItems: 'center'}, selected === 4 ? { borderColor: 'yellow', borderWidth: 2 } : { borderWidth: 0 }]}>
+                    <TouchableOpacity style={[{width: '20%', height: '80%', backgroundColor: '#234896', justifyContent: 'center', alignItems: 'center'}, selected === 4 ? { borderColor: 'yellow', borderWidth: 2 } : { borderWidth: 0 }]} onPress={
+                        () => setSelected(4)
+                    }>
 
                     </TouchableOpacity>
                 </View>
@@ -97,7 +107,23 @@ const Screen_02 = ({ navigation }) => {
                 {/* Button chọn */}
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                     <View style={{ width: '90%', height: '50%', backgroundColor: '#234896', borderRadius: 10 }}>
-                        <TouchableOpacity style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                        <TouchableOpacity style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }} onPress={
+                            () => {
+                                if(selected == 1){
+                                    console.log(selected)
+                                    navigation.navigate('Screen_01', phone[0])
+                                }else if(selected == 2){
+                                    console.log(selected)
+                                    navigation.navigate('Screen_01', phone[1])
+                                }else if(selected == 3){
+                                    console.log(selected)
+                                    navigation.navigate('Screen_01', phone[2])
+                                }else if(selected == 4){
+                                    console.log(selected)
+                                    navigation.navigate('Screen_01', phone[3])
+                                }
+                            }
+                        }>
                             <Text style={{ fontSize: 25, fontWeight: 'bold', color: 'white' }}>XONG</Text>
                         </TouchableOpacity>
                     </View>

@@ -5,16 +5,32 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Screen_02 from './Screen_02';
-const Screen_01 = ({navigation}) => {
+// import Screen_02 from './Screen_02';
+const Screen_01 = ({route, navigation}) => {
+
+    const dataDefault = {
+        "id": 1,
+        "name": "Điện Thoại Vsmart Joy 3 Hàng chính hãng - Màu Silver",
+        "color": "Silver",
+        "supplier": "Tiki Tradding",
+        "price": "1.790.000 đ",
+        "priceold": "1.790.000 đ",
+        "image": "vs_1.png"
+    }
+
+    let dataCurrunt = route.params;
+
+    if(dataCurrunt == null){
+        dataCurrunt = dataDefault
+    }
+    
     return (
         <SafeAreaView style={{ flex: 1 }}>
             {/* View 1- Hình Điện thoại */}
             <View style={{ flex: 3, justifyContent: 'center', alignItems: 'center' }}>
                 <View style={{ width: '90%', height: '90%', justifyContent: 'center', alignItems: 'center' }}>
-                    <Image source={require("../assets/image/vs_1.png")} style={{ resizeMode: 'cover' }}></Image>
+                    <Image source={{uri:`http://localhost:8081/assets/image/${dataCurrunt.image}`}} style={{ resizeMode: 'cover', width: '100%', height: '100%' }}></Image>
                 </View>
-
             </View>
 
             {/* View 2 - Thông tin điện thoại */}
@@ -25,7 +41,7 @@ const Screen_01 = ({navigation}) => {
 
                     {/* View - Tên điện thoại */}
                     <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
-                        <Text style={{ fontSize: 20 }}>Điện Thoại Vsmart Joy 3 - Hàng chính hãng</Text>
+                        <Text style={{ fontSize: 20 }}>{dataCurrunt.name}</Text>
                     </View>
 
                     {/* View - 5 sao */}
@@ -78,8 +94,8 @@ const Screen_01 = ({navigation}) => {
                 </View>
 
                 {/* Button chọn mua */}
-                <View style={{ flex: 3, paddingBottom: 10, justifyContent: 'flex-end', alignItems: 'center' }}>
-                    <View style={{ width: '90%', height: '40%', backgroundColor: 'red', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+                <View style={{ flex: 2, paddingBottom: 10, justifyContent: 'flex-end', alignItems: 'center' }}>
+                    <View style={{ width: '90%', height: '50%', backgroundColor: 'red', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
                         <Text style={{ fontSize: 25, fontWeight: 'bold', color: 'white' }}>CHỌN MUA</Text>
                     </View>
                 </View>
