@@ -1,0 +1,8 @@
+![alt text](img_week2/week2_cau1.png)
+![alt text](img_week2/week2_cau2.png)
+![alt text](img_week2/week2_cau3.png)
+![alt text](img_week2/week2_cau4.png)
+![alt text](img_week2/week2_cau4.png)
+![alt text](img_week2/week2_part2_cau1.png)
+![alt text](img_week2/week2_part2_cau2.png)
+![alt text](img_week2/week2_part2_cau3.png)
