@@ -1,0 +1,7 @@
+### WEEK 7 - APP TAKE NOTE
+
+# SCREEN 01
+
+# SCREEN 02
+
+# SCREEN 03
