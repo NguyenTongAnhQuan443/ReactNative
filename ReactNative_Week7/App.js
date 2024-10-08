@@ -5,24 +5,24 @@ import Screen01 from './components/Screen01';
 import Screen02 from './components/Screen02';
 import Screen03 from './components/Screen03';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 export default function App() {
+
+  const Stack = createNativeStackNavigator();
+
   return (
-    // <View style={styles.container}>
-    //   <Text>Open up App.js to start working on your app!</Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    // <Screen01/>
-    <Screen02 />
-    // <Screen03/>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Screen01" component={Screen01} options={{ headerShown: false }} />
+        <Stack.Screen name="Screen02" component={Screen02} options={{ headerShown: false }} />
+        <Stack.Screen name="Screen03" component={Screen03} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
 });
