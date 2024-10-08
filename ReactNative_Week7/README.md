@@ -4,7 +4,7 @@
 ## https://67034f52bd7c8c1ccd4102af.mockapi.io/api/takenote/DataNote
 
 # SCREEN 01
-![alt text](assets/minhChung/image.png)
+![alt text](assets/minhChung/Screen01.png)
 
 # SCREEN 02
 ![alt text](assets/minhChung/Screen02.png)
