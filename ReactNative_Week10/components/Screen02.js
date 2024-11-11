@@ -6,14 +6,17 @@ import { toggleFavorite } from '../store';
 
 const Screen02 = ({ navigation }) => {
     const dispatch = useDispatch();
-    const data = useSelector(state => state.products.items);
+    const products = useSelector(state => state.products.items); // get ds
 
     const renderItem = ({ item }) => (
         <TouchableOpacity
             style={styles.itemContainer}
             onPress={() => navigation.navigate('ProductDetails', { product: item })}
         >
-            <TouchableOpacity style={styles.heartIcon} onPress={() => dispatch(toggleFavorite(item.id))}>
+            <TouchableOpacity
+                style={styles.heartIcon}
+                onPress={() => dispatch(toggleFavorite(item.id))}
+            >
                 <Text style={[styles.heartText, { color: item.favorite ? '#E94141' : '#ccc' }]}>♡</Text>
             </TouchableOpacity>
             <Image source={item.image} style={styles.image} resizeMode='contain' />
@@ -28,7 +31,7 @@ const Screen02 = ({ navigation }) => {
                 <Text style={styles.headerText}>The world's Best Bike</Text>
             </View>
             <FlatList
-                data={data}
+                data={products}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.id}
                 numColumns={2}
