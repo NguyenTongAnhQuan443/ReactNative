@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React from 'react';
 
-const Screen01 = () => {
+const Screen01 = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <View style={{ flex: 2, justifyContent: 'center', alignItems: 'center' }}>
@@ -12,14 +12,17 @@ const Screen01 = () => {
             </View>
             <View style={{ flex: 8, justifyContent: 'center', alignItems: 'center' }}>
                 <View style={{ width: 359, height: 388, backgroundColor: '#F7E5E4', borderRadius: 30, alignItems: 'center' }}>
-                    <Image source={require('../assets/bifour_-removebg-preview.png')} style={{ width: '100%', height: '100%' }} resizeMode='contain' />
+                    <Image source={require('../assets/bione-removebg-preview.png')} style={{ width: '100%', height: '100%' }} resizeMode='contain' />
                     <View style={styles.shopContainer}>
                         <Text style={styles.shopText}>POWER BIKE{"\n"}SHOP</Text>
                     </View>
                 </View>
             </View>
             <View style={{ flex: 2, justifyContent: 'center', alignItems: 'center' }}>
-                <TouchableOpacity style={{ width: '90%', height: '55%', backgroundColor: '#E94141', borderRadius: 50, justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableOpacity
+                    style={{ width: '90%', height: '55%', backgroundColor: '#E94141', borderRadius: 50, justifyContent: 'center', alignItems: 'center' }}
+                    onPress={() => navigation.navigate('Products')}
+                >
                     <Text style={{ fontSize: 27, fontWeight: 'bold', color: 'white' }}>Get Started</Text>
                 </TouchableOpacity>
             </View>

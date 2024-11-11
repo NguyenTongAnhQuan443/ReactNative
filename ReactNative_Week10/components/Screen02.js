@@ -11,16 +11,16 @@ const data = [
     { id: '6', name: 'Pinarello', price: '$1350', image: require('../assets/bifour_-removebg-preview.png') },
 ];
 
-const Screen02 = () => {
+const Screen02 = ({ navigation }) => {
     const renderItem = ({ item }) => (
-        <View style={styles.itemContainer}>
-            <TouchableOpacity style={styles.heartIcon}>
-                <Text style={styles.heartText}>♡</Text>
-            </TouchableOpacity>
+        <TouchableOpacity
+            style={styles.itemContainer}
+            onPress={() => navigation.navigate('ProductDetails', { product: item })}
+        >
             <Image source={item.image} style={styles.image} resizeMode='contain' />
             <Text style={styles.itemName}>{item.name}</Text>
             <Text style={styles.itemPrice}>{item.price}</Text>
-        </View>
+        </TouchableOpacity>
     );
 
     return (
@@ -28,19 +28,6 @@ const Screen02 = () => {
             <View style={styles.header}>
                 <Text style={styles.headerText}>The world's Best Bike</Text>
             </View>
-
-            <View style={styles.tabContainer}>
-                <TouchableOpacity style={[styles.tab, styles.activeTab]}>
-                    <Text style={styles.tabText}>All</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tab}>
-                    <Text style={styles.tabText}>Roadbike</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tab}>
-                    <Text style={styles.tabText}>Mountain</Text>
-                </TouchableOpacity>
-            </View>
-
             <FlatList
                 data={data}
                 renderItem={renderItem}
@@ -66,27 +53,6 @@ const styles = StyleSheet.create({
         color: '#E94141',
         textAlign: 'center',
     },
-    tabContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        paddingVertical: 20,
-        paddingBottom: 30,
-        backgroundColor: '#FFF',
-    },
-    tab: {
-        paddingVertical: 10,
-        paddingHorizontal: 40,
-        borderRadius: 10,
-        borderWidth: 1,
-        borderColor: '#DDD',
-    },
-    activeTab: {
-        backgroundColor: '#ff4081',
-    },
-    tabText: {
-        fontSize: 16,
-        color: '#000',
-    },
     itemContainer: {
         height: 220,
         flex: 1,
@@ -95,24 +61,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#FEF5EC',
         borderRadius: 10,
         alignItems: 'center',
-        position: 'relative',
-    },
-    heartIcon: {
-        position: 'absolute',
-        top: 10,
-        left: 10,
-        backgroundColor: '#FFF',
-        padding: 8,
-        borderRadius: 20,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.2,
-        shadowRadius: 1.41,
-        elevation: 2,
-    },
-    heartText: {
-        fontSize: 20,
-        color: '#E94141',
     },
     image: {
         width: 100,
