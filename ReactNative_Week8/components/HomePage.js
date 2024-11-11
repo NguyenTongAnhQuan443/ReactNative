@@ -1,25 +1,22 @@
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, TextInput, Image, ScrollView, FlatList } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Ionicons } from '@expo/vector-icons'
 
-import Screen03 from './Screen03'
+const HomePage = ({ navigation, route }) => {
 
-import { fetchItems, deleteItem, AddItem } from '../services/Services'
+    // const { userName } = route.params
 
-const Screen02 = ({ navigation, route }) => {
-
-    const { userName } = route.params
-
-    // API
-    const [data, setData] = useState([])
-
-    useEffect(() => {
-        fetchItems(setData);
-    }, [data])
-    // API
+    // Dữ liệu cứng
+    const [data, setData] = useState([
+        { id: '1', note: 'Complete the report' },
+        { id: '2', note: 'Go to the gym' },
+        { id: '3', note: 'Buy groceries' },
+        { id: '4', note: 'Plan weekend trip' },
+        { id: '5', note: 'Prepare presentation' }
+    ])
 
     const renderItem = ({ item }) => (
-        <View style={{ width: '90%', height: 65, backgroundColor: '#D8DADD', borderRadius: 30, marginBottom: 15, borderRadius: 50, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+        <View style={{ width: '90%', height: 65, backgroundColor: '#D8DADD', borderRadius: 30, marginBottom: 15, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
             {/* Icon check */}
             <TouchableOpacity>
                 <Ionicons name='checkmark-done-outline' size={35} color='#369F5B' style={{ left: 10 }} />
@@ -35,7 +32,7 @@ const Screen02 = ({ navigation, route }) => {
             {/* Icon delete */}
             <TouchableOpacity
                 onPress={() => {
-                    deleteItem(item.id)
+                    setData(data.filter(i => i.id !== item.id))
                 }}
             >
                 <Ionicons name='close-circle-outline' size={35} color='#E06F70' style={{ right: 10 }} />
@@ -73,15 +70,15 @@ const Screen02 = ({ navigation, route }) => {
 
                         {/* Name User name And Text */}
                         <View style={{ left: 10 }}>
-                            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Hi {userName}</Text>
-                            <Text style={{ fontSize: 14, fontWeight: 'bold', color: 'grey' }}>have afrate day a head</Text>
+                            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Hi Qu</Text>
+                            <Text style={{ fontSize: 14, fontWeight: 'bold', color: 'grey' }}>have a great day ahead</Text>
                         </View>
                     </View>
                 </View>
 
                 {/* View Input */}
-                <View style={{ flex: 2, justifyContent: 'flex-start', alignItems: 'center', }}>
-                    <TextInput style={{ borderWidth: 1, height: 55, width: '90%', borderRadius: 10, fontSize: 20, paddingLeft: 40 }} placeholder='Search'></TextInput>
+                <View style={{ flex: 2, justifyContent: 'flex-start', alignItems: 'center' }}>
+                    <TextInput style={{ borderWidth: 1, height: 55, width: '90%', borderRadius: 10, fontSize: 20, paddingLeft: 40 }} placeholder='Search' />
                     <Ionicons name='search' color='black' size={20} style={{ position: 'absolute', left: 30, top: 18 }} />
                 </View>
             </View>
@@ -96,7 +93,6 @@ const Screen02 = ({ navigation, route }) => {
                         renderItem={renderItem}
                         keyExtractor={item => item.id}
                         numColumns={1}
-
                         contentContainerStyle={{
                             justifyContent: 'center',
                             alignItems: 'center',
@@ -121,6 +117,4 @@ const Screen02 = ({ navigation, route }) => {
     )
 }
 
-export default Screen02
-
-const styles = StyleSheet.create({})
+export default HomePage

@@ -45,3 +45,25 @@ export const deleteItem = async (id) => {
         console.log('Lỗi - Delete: ', error)
     }
 }
+
+// Filter items by keyword
+export const filterItems = async (keyword, setData) => {
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Filter - Lỗi kết nối !');
+        }
+        const data = await response.json();
+        
+        // Lọc các items chứa từ khóa trong title hoặc content
+        const filteredData = data.filter(item =>
+            item.title.toLowerCase().includes(keyword.toLowerCase()) || 
+            item.content.toLowerCase().includes(keyword.toLowerCase())
+        );
+        
+        // Cập nhật dữ liệu đã lọc
+        setData(filteredData);
+    } catch (error) {
+        console.log('Lỗi Filter: ', error);
+    }
+};
