@@ -1,16 +1,17 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { configureStore, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
+export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
+    const response = await fetch('https://672864f1270bd0b9755537a5.mockapi.io/week10');
+    const data = await response.json();
+    return data;
+});
 
 const productsSlice = createSlice({
     name: 'products',
     initialState: {
-        items: [
-            { id: '1', name: 'Pinarello', price: '$1800', image: require('./assets/bifour_-removebg-preview.png'), favorite: false },
-            { id: '2', name: 'Pina Mountai', price: '$1700', image: require('./assets/bione-removebg-preview.png'), favorite: false },
-            { id: '3', name: 'Pina Bike', price: '$1500', image: require('./assets/bifour_-removebg-preview.png'), favorite: false },
-            { id: '4', name: 'Pinarello', price: '$1900', image: require('./assets/bifour_-removebg-preview.png'), favorite: false },
-            { id: '5', name: 'Pinarello', price: '$2700', image: require('./assets/bifour_-removebg-preview.png'), favorite: false },
-            { id: '6', name: 'Pinarello', price: '$1350', image: require('./assets/bifour_-removebg-preview.png'), favorite: false },
-        ],
+        items: [],
+        status: 'idle',
+        error: null,
     },
     reducers: {
         toggleFavorite: (state, action) => {
@@ -19,6 +20,21 @@ const productsSlice = createSlice({
                 product.favorite = !product.favorite;
             }
         },
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchProducts.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(fetchProducts.fulfilled, (state, action) => {
+                state.status = 'succeeded';
+
+                state.items = action.payload.map(item => ({ ...item, favorite: false }));
+            })
+            .addCase(fetchProducts.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message;
+            });
     },
 });
 

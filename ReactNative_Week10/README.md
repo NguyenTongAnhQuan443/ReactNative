@@ -13,6 +13,9 @@
 ### (Ảnh 2 ở chế độ sản phẩm yêu thích (Trái tim màu đỏ))
 ![alt text](image-3.png)
 
+### Fetch API
+![alt text](image-6.png)
+
 ### Redux Store ở Screen02 dùng useSelector để lấy DS sản phẩm từ Redux Store
 ![alt text](image-4.png)
 ![alt text](image-5.png)

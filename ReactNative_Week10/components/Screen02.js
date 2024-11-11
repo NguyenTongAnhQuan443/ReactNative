@@ -1,12 +1,20 @@
-import React from 'react';
-import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleFavorite } from '../store';
+import { toggleFavorite, fetchProducts } from '../store';
 
 const Screen02 = ({ navigation }) => {
     const dispatch = useDispatch();
-    const products = useSelector(state => state.products.items); // get ds
+    const products = useSelector(state => state.products.items);
+    const status = useSelector(state => state.products.status);
+    const error = useSelector(state => state.products.error);
+
+    useEffect(() => {
+        if (status === 'idle') {
+            dispatch(fetchProducts());
+        }
+    }, [status, dispatch]);
 
     const renderItem = ({ item }) => (
         <TouchableOpacity
@@ -19,11 +27,27 @@ const Screen02 = ({ navigation }) => {
             >
                 <Text style={[styles.heartText, { color: item.favorite ? '#E94141' : '#ccc' }]}>♡</Text>
             </TouchableOpacity>
-            <Image source={item.image} style={styles.image} resizeMode='contain' />
+            <Image source={require('../assets/bifour_-removebg-preview.png')} style={styles.image} resizeMode='contain' />
             <Text style={styles.itemName}>{item.name}</Text>
-            <Text style={styles.itemPrice}>{item.price}</Text>
+            <Text style={styles.itemPrice}>${item.price}</Text>
         </TouchableOpacity>
     );
+
+    if (status === 'loading') {
+        return (
+            <View style={styles.loadingContainer}>
+                <ActivityIndicator size="large" color="#E94141" />
+            </View>
+        );
+    }
+
+    if (status === 'failed') {
+        return (
+            <View style={styles.errorContainer}>
+                <Text style={styles.errorText}>Lỗi khi tải dữ liệu: {error}</Text>
+            </View>
+        );
+    }
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#FFF' }}>
@@ -90,5 +114,19 @@ const styles = StyleSheet.create({
     },
     flatListContent: {
         paddingHorizontal: 10,
+    },
+    loadingContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    errorContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    errorText: {
+        fontSize: 18,
+        color: '#ff5252',
     },
 });

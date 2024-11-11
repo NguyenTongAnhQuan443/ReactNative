@@ -12,7 +12,7 @@ const Screen03 = ({ route }) => {
         <SafeAreaView style={{ flex: 1, backgroundColor: '#FFF' }}>
             <View style={styles.container}>
                 <View style={styles.imageContainer}>
-                    <Image source={product.image} style={styles.image} resizeMode="contain" />
+                    <Image source={require('../assets/bifour_-removebg-preview.png')} style={styles.image} resizeMode="contain" />
                 </View>
                 <View style={styles.infoContainer}>
                     <Text style={styles.title}>{product.name}</Text>
