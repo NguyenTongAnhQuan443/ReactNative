@@ -1,22 +1,21 @@
 import React from 'react';
 import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-const data = [
-    { id: '1', name: 'Pinarello', price: '$1800', image: require('../assets/bifour_-removebg-preview.png') },
-    { id: '2', name: 'Pina Mountai', price: '$1700', image: require('../assets/bione-removebg-preview.png') },
-    { id: '3', name: 'Pina Bike', price: '$1500', image: require('../assets/bifour_-removebg-preview.png') },
-    { id: '4', name: 'Pinarello', price: '$1900', image: require('../assets/bifour_-removebg-preview.png') },
-    { id: '5', name: 'Pinarello', price: '$2700', image: require('../assets/bifour_-removebg-preview.png') },
-    { id: '6', name: 'Pinarello', price: '$1350', image: require('../assets/bifour_-removebg-preview.png') },
-];
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleFavorite } from '../store';
 
 const Screen02 = ({ navigation }) => {
+    const dispatch = useDispatch();
+    const data = useSelector(state => state.products.items);
+
     const renderItem = ({ item }) => (
         <TouchableOpacity
             style={styles.itemContainer}
             onPress={() => navigation.navigate('ProductDetails', { product: item })}
         >
+            <TouchableOpacity style={styles.heartIcon} onPress={() => dispatch(toggleFavorite(item.id))}>
+                <Text style={[styles.heartText, { color: item.favorite ? '#E94141' : '#ccc' }]}>♡</Text>
+            </TouchableOpacity>
             <Image source={item.image} style={styles.image} resizeMode='contain' />
             <Text style={styles.itemName}>{item.name}</Text>
             <Text style={styles.itemPrice}>{item.price}</Text>
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     itemContainer: {
-        height: 220,
+        height: 250,
         flex: 1,
         margin: 10,
         padding: 15,
@@ -62,17 +61,27 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         alignItems: 'center',
     },
+    heartIcon: {
+        position: 'absolute',
+        top: 10,
+        left: 10,
+        padding: 5,
+    },
+    heartText: {
+        fontSize: 30,
+        color: '#E94141',
+    },
     image: {
         width: 100,
         height: 100,
     },
     itemName: {
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: 'bold',
         marginTop: 10,
     },
     itemPrice: {
-        fontSize: 20,
+        fontSize: 25,
         color: '#ff8a80',
         marginTop: 5,
     },

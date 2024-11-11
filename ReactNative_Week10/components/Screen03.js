@@ -1,8 +1,11 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../store';
 
 const Screen03 = ({ route }) => {
+    const dispatch = useDispatch();
     const { product } = route.params;
 
     return (
@@ -19,6 +22,12 @@ const Screen03 = ({ route }) => {
                         Đây là một sản phẩm tuyệt vời cho những người yêu thích thể thao.
                     </Text>
                 </View>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => dispatch(addToCart(product.id))}
+                >
+                    <Text style={styles.buttonText}>Add to Cart</Text>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     );
@@ -68,5 +77,17 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#757575',
         lineHeight: 25,
+    },
+    button: {
+        backgroundColor: '#ff5252',
+        paddingVertical: 15,
+        borderRadius: 10,
+        alignItems: 'center',
+        marginTop: 20,
+    },
+    buttonText: {
+        color: '#FFF',
+        fontWeight: 'bold',
+        fontSize: 20,
     },
 });
