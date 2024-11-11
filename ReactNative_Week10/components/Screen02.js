@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
 const data = [
     { id: '1', name: 'Pinarello', price: '$1800', image: require('../assets/bifour_-removebg-preview.png') },
     { id: '2', name: 'Pina Mountai', price: '$1700', image: require('../assets/bione-removebg-preview.png') },
@@ -13,6 +14,9 @@ const data = [
 const Screen02 = () => {
     const renderItem = ({ item }) => (
         <View style={styles.itemContainer}>
+            <TouchableOpacity style={styles.heartIcon}>
+                <Text style={styles.heartText}>♡</Text>
+            </TouchableOpacity>
             <Image source={item.image} style={styles.image} resizeMode='contain' />
             <Text style={styles.itemName}>{item.name}</Text>
             <Text style={styles.itemPrice}>{item.price}</Text>
@@ -91,6 +95,24 @@ const styles = StyleSheet.create({
         backgroundColor: '#FEF5EC',
         borderRadius: 10,
         alignItems: 'center',
+        position: 'relative',
+    },
+    heartIcon: {
+        position: 'absolute',
+        top: 10,
+        left: 10,
+        backgroundColor: '#FFF',
+        padding: 8,
+        borderRadius: 20,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.2,
+        shadowRadius: 1.41,
+        elevation: 2,
+    },
+    heartText: {
+        fontSize: 20,
+        color: '#E94141',
     },
     image: {
         width: 100,
