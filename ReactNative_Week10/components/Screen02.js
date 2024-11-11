@@ -29,7 +29,7 @@ const Screen02 = ({ navigation }) => {
             </TouchableOpacity>
             <Image source={require('../assets/bifour_-removebg-preview.png')} style={styles.image} resizeMode='contain' />
             <Text style={styles.itemName}>{item.name}</Text>
-            <Text style={styles.itemPrice}>${item.price}</Text>
+            <Text style={styles.itemPrice}>{item.price}</Text>
         </TouchableOpacity>
     );
 
@@ -53,6 +53,12 @@ const Screen02 = ({ navigation }) => {
         <SafeAreaView style={{ flex: 1, backgroundColor: '#FFF' }}>
             <View style={styles.header}>
                 <Text style={styles.headerText}>The world's Best Bike</Text>
+                <TouchableOpacity
+                    style={styles.addButton}
+                    onPress={() => navigation.navigate('AddProduct')}
+                >
+                    <Text style={styles.addButtonText}>+ Add Product</Text>
+                </TouchableOpacity>
             </View>
             <FlatList
                 data={products}
@@ -72,12 +78,25 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: '#FFF',
         alignItems: 'flex-start',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     headerText: {
         fontSize: 25,
         fontWeight: 'bold',
         color: '#E94141',
         textAlign: 'center',
+    },
+    addButton: {
+        backgroundColor: '#E94141',
+        paddingVertical: 10,
+        paddingHorizontal: 15,
+        borderRadius: 5,
+    },
+    addButtonText: {
+        color: '#FFF',
+        fontWeight: 'bold',
+        fontSize: 16,
     },
     itemContainer: {
         height: 250,

@@ -6,6 +6,18 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async ()
     return data;
 });
 
+export const addProduct = createAsyncThunk('products/addProduct', async (newProduct) => {
+    const response = await fetch('https://672864f1270bd0b9755537a5.mockapi.io/week10', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newProduct),
+    });
+    const data = await response.json();
+    return data;
+});
+
 const productsSlice = createSlice({
     name: 'products',
     initialState: {
@@ -28,12 +40,14 @@ const productsSlice = createSlice({
             })
             .addCase(fetchProducts.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-
                 state.items = action.payload.map(item => ({ ...item, favorite: false }));
             })
             .addCase(fetchProducts.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message;
+            })
+            .addCase(addProduct.fulfilled, (state, action) => {
+                state.items.push(action.payload);
             });
     },
 });
